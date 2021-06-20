@@ -1,0 +1,229 @@
+<!doctype html>
+<html>
+    <head>
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/css/bootstrap-select.css" />
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/js/bootstrap-select.min.js"></script>
+    </head>
+    <style>
+    .custom-css{
+      top: 10%;
+      left: 10%;
+      margin-top: 25px;
+      margin-right: 20px;
+      position: relative;
+      display: inline-block;
+      width: 80% !important;
+    }
+
+    h1{
+  font-family: "Montserrat", sans-serif;
+  color: #003399;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 15px;
+}
+
+      body {
+        background-image:url("static/bgimg.jpg");
+        background-repeat: no-repeat;
+        position: relative;
+        background-size: cover;
+      }
+      
+      </style>
+      <body>
+        <nav class="navbar navbar-expand-lg navbar-dark">
+          <div class="logo" ><img src="/static/logo.png" alt="logo" width="80" height="80"></div>
+        <a class="navbar-brand" href="" style="text-shadow: 2px 2px #003399; font-size: 40px; cursor:auto; color: #fff;"><b>Disease Predictor</b></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="navbar-brand" href="dashboard.html" style="text-shadow: 1px 1px #c0c0c0; font-size: 25px;">Dashboard </a>
+            </li>
+            <li class="nav-item">
+              <a class="navbar-brand" href="http://localhost/Hackbout2.O/DiseasePrediction/index.php" style="text-shadow: 1px 1px #c0c0c0; font-size: 25px;">Logout </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      
+         <form action="{{url_for('predict')}}" method="post">
+         <!--<label  style="margin-left: 21%;">Identify your symptoms</label><br><br>-->
+             <h1>PLEASE SELECT THE SYMPTOMS</h1>
+         <select multiple class="selectpicker custom-css" name="symptoms" id="symptoms" data-live-search="true" style="margin-top: 100px; width: 60%;" >
+
+          <option>Abdominal pain</option>
+          <option>Abnormal menstruation</option>
+          <option>Acidity</option>
+          <option>Acute liver failure</option>
+          <option>Altered sensorium</option>
+          <option>Anxiety</option>
+          <option>Back pain</option>
+          <option>Belly Pain</option>
+          <option>Blackheads</option>
+          <option>Bladder discomfort</option>
+          <option>Blister</option>
+          <option>Blood in sputum</option>
+          <option>Bloody Stool</option>
+          <option>Blurred And Distorted Vision</option>
+          <option>Breathlessness</option>
+          <option>Brittle Nails</option>
+          <option>Bruising</option>
+          <option>Burning Micturition</option>
+          <option>Chest Pain</option>
+          <option>Chills</option>
+          <option>Cold Hands And Feets</option>
+          <option>Coma</option>
+          <option>Congestion</option>
+          <option>Constipation</option>
+          <option>Continuous Feel Of Urine</option>
+          <option>Continuous Sneezing</option>
+          <option>Cough</option>
+          <option>Cramps</option>
+          <option>Dark Urine</option>
+          <option>Dehydration</option>
+          <option>Depression</option>
+          <option>Diarrhoea</option>
+          <option>Dischromic  Patches</option>
+          <option>Distention of Abdomen</option>
+          <option>Dizziness</option>
+          <option>Drying And Tingling Lips</option>
+          <option>Enlarged Thyroid</option>
+          <option>Excessive Hunger</option>
+          <option>Extra Marital Contacts</option>
+          <option>Family History</option>
+          <option>Fast Heart Rate</option>
+          <option>Fatigue</option>
+          <option>Fluid Overload</option>
+          <option>Foul Smell of Urine</option>
+          <option>Headache</option>
+          <option>High Fever</option>
+          <option>Hip Joint Pain</option>
+          <option>History Of Alcohol Consumption</option>
+          <option>Increased Appetite</option>
+          <option>Indigestion</option>
+          <option>Inflammatory Nails</option>
+          <option>Internal Itching</option>
+          <option>Irregular Sugar Level</option>
+          <option>Irritability</option>
+          <option>Irritation In Anus</option>
+          <option>Itching</option>
+          <option>Joint Pain</option>
+          <option>Knee Pain</option>
+          <option>Lack of Concentration</option>
+          <option>Lethargy</option>
+          <option>Loss of Appetite</option>
+          <option>Loss of Balance</option>
+          <option>Loss of Smell</option>
+          <option>Malaise</option>
+          <option>Mild Fever</option>
+          <option>Mood Swings</option>
+          <option>Movement Stiffness</option>
+          <option>Mucoid Sputum</option>
+          <option>Muscle Pain</option>
+          <option>Muscle Wasting</option>
+          <option>Muscle Weakness</option>
+          <option>Nausea</option>
+          <option>Neck Pain</option>
+          <option>Nodal Skin Eruptions</option>
+          <option>Obesity</option>
+          <option>Pain Behind The Eyes</option>
+          <option>Pain During Bowel Movements</option>
+          <option>Pain In Anal Region</option>
+          <option>Painful Walking</option>
+          <option>Palpitations</option>
+          <option>Passage of Gases</option>
+          <option>Patches In Throat</option>
+          <option>Phlegm</option>
+          <option>Polyuria</option>
+          <option>Prominent Veins On Calf</option>
+          <option>Puffy Face And Eyes</option>
+          <option>Pus Filled Pimples</option>
+          <option>Receiving Blood Transfusion</option>
+          <option>Receiving Unsterile Injections</option>
+          <option>Red Sore Around Nose</option>
+          <option>Red Spots Over Body</option>
+          <option>Redness of Eyes</option>
+          <option>Restlessness</option>
+          <option>Runny Nose</option>
+          <option>Rusty Sputum</option>
+          <option>Scurring</option>
+          <option>Shivering</option>
+          <option>Silver Like Dusting</option>
+          <option>Sinus Pressure</option>
+          <option>Skin Peeling</option>
+          <option>Skin Rash</option>
+          <option>Slurred Speech</option>
+          <option>Small Dents In Nails</option>
+          <option>Spinning Movements</option>
+          <option>Spotting  Urination</option>
+          <option>Stiff Neck</option>
+          <option>Stomach Bleeding</option>
+          <option>Stomach Pain</option>
+          <option>Sunken Eyes</option>
+          <option>Sweating</option>
+          <option>Swelled Lymph Nodes</option>
+          <option>Swelling Joints</option>
+          <option>Swelling Of Stomach</option>
+          <option>Swollen Blood Vessels</option>
+          <option>Swollen Extremeties</option>
+          <option>Swollen Legs</option>
+          <option>Throat Irritation</option>
+          <option>Toxic Look (Typhos)</option>
+          <option>Ulcers on Tongue</option>
+          <option>Unsteadiness</option>
+          <option>Visual Disturbances</option>
+          <option>Vomiting</option>
+          <option>Watering From Eyes</option>
+          <option>Weakness In Limbs</option>
+          <option>Weakness of One Body Side</option>
+          <option>Weight Gain</option>
+          <option>Weight Loss</option>
+          <option>Yellow Crust Ooze</option>
+          <option>Yellow Urine</option>
+          <option>Yellowing of Eyes</option>
+          <option>Yellowish Skin</option>
+        </select><br>
+         <button class="submit_btn" id="submit" name="submit">Submit your symptoms</button>
+        </div>
+         <script>
+          window.watsonAssistantChatOptions = {
+              integrationID: "e9cc0128-af06-44db-a3df-9088041cb0d0", // The ID of this integration.
+              region: "eu-gb", // The region your integration is hosted in.
+              serviceInstanceID: "80661496-8b40-4abf-8d31-90a239768dbb", // The ID of your service instance.
+              onLoad: function(instance) { instance.render(); }
+            };
+          setTimeout(function(){
+            const t=document.createElement('script');
+            t.src="https://web-chat.global.assistant.watson.appdomain.cloud/loadWatsonAssistantChat.js";
+            document.head.appendChild(t);
+          });
+        </script>
+         <style>
+          .submit_btn {
+            border: 3px solid #fff;
+            background-color:transparent;
+            padding: 10px 20px;
+            position: absolute;
+            font-size: 35px;
+            font-weight: bold;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            top: 250%;
+            left: 40%;
+            color: #fff;
+            cursor: pointer;
+          }
+          </style>
+         </form>
+           
+        </body>
+</html>
